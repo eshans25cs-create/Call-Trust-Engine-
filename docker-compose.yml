@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  gemini-call-agent:
+    build: .
+    container_name: gemini_live_call_agent
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - TELEPHONY_HOST=0.0.0.0
+      - TELEPHONY_PORT=8000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

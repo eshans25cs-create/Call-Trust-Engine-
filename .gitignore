@@ -1,0 +1,29 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Secrets and environment configurations
+.env
+.env.local
+*.key
+*.pem
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and recording artifacts
+*.log
+recordings/
+audio_cache/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
